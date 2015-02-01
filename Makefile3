@@ -1,0 +1,6 @@
+.PHONY:all
+SOURCE = $(wildcard *.c)
+OBJS = /home/linux/Makefile
+add_source = $(addprefix $(OBJS)/,$(SOURCE))
+all:
+	@echo $(add_source)

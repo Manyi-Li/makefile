@@ -1,0 +1,17 @@
+.PHONY:clean
+CC = gcc
+RM = rm -rf 
+OBJ = simple 
+SRCS = $(wildcard *.c)
+OBJS = $(patsubst %.c,%.o,$(SRCS))
+$(OBJ):$(OBJS)
+	$(CC) -o $@ $^
+main.o : main.c
+	$(CC) -c $^ -o $@
+bar.o : bar.c
+	$(CC) -c $^ -o $@
+foo.o : foo.c
+	$(CC) -c $^ -o $@
+clean :
+	$(RM) $(OBJ) $(OBJS)
+

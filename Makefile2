@@ -1,0 +1,10 @@
+.PHONY:all
+SOURCE = main.c foo.c bar.c foo.h foo.s bar.h bar.s
+OBJS = /home/linux/Makefile
+add_source = $(addprefix $(OBJS)/,$(SOURCE))
+sources = $(filter %.c %.s,$(add_source))
+source = $(filter-out %.c,$(add_source))
+all:
+	@echo $(add_source)
+	@echo $(sources)
+	@echo $(source)
